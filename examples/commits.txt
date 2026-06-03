@@ -1,0 +1,5 @@
+feat(cli): add markdown output
+fix(parser): ignore blank commit lines
+docs: add quickstart
+feat!: remove deprecated config format
+chore: update packaging metadata
