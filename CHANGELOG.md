@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Added a CI badge, example generated release notes, and a maintenance roadmap to the README.
+
 ## 0.1.0 - 2026-06-03
 
 - Added Conventional Commit parsing.
