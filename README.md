@@ -33,6 +33,12 @@ Generate notes from git:
 release-note-weaver --range v0.1.0..HEAD --version 0.2.0
 ```
 
+Exclude noisy commit types:
+
+```bash
+release-note-weaver --range v0.1.0..HEAD --version 0.2.0 --exclude-type chore
+```
+
 Prepend the generated section to a changelog:
 
 ```bash

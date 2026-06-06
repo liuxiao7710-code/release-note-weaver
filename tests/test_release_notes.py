@@ -9,7 +9,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from release_note_weaver.cli import parse_commit, parse_commits, prepend_to_changelog, render_release_notes
+from release_note_weaver.cli import filter_commits, parse_commit, parse_commits, prepend_to_changelog, render_release_notes
 
 
 class ReleaseNoteWeaverTests(unittest.TestCase):
@@ -46,6 +46,13 @@ class ReleaseNoteWeaverTests(unittest.TestCase):
 
             text = changelog.read_text(encoding="utf-8")
             self.assertLess(text.index("0.2.0"), text.index("0.1.0"))
+
+    def test_filter_commits_excludes_types(self) -> None:
+        commits = parse_commits(["feat: add thing", "docs: explain thing", "chore: update metadata"])
+
+        filtered = filter_commits(commits, ["docs", "chore"])
+
+        self.assertEqual([commit.type for commit in filtered], ["feat"])
 
     def test_cli_from_file(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
