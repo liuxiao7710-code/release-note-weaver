@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+No changes yet.
+
+## 0.1.1 - 2026-06-16
+
 - Added `--exclude-type` for omitting noisy commit types from generated notes.
 - Added a CI badge, example generated release notes, and a maintenance roadmap to the README.
 
